@@ -569,7 +569,7 @@ function whatsapp_posts1(AmazonMsg,AmazonPhoto,Amznapi,Amznphoneid,Amznprodid){
 				  "to_number": arrayGroupNumber[i].id,
 				  "type": "media",
 				  "message": AmazonPhoto,
-				  "text": randomMonth + ggff
+				  "text": ggff
 				}
 		}
         request({
@@ -653,7 +653,7 @@ function whatsapp_posts2(AmazonMsg,AmazonPhoto,Amznapi,Amznphoneid,Amznprodid){
 			linkRequest1 = {
 			  "to_number": arrayGroupNumber[i].id,
 			  "type": "text",
-			  "message": randomMonth + ggff
+			  "message": ggff
 			}
 		}else{
 			linkRequest1 = {
