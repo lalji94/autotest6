@@ -129,7 +129,7 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
           let sql = 'SELECT COUNT(*) as cnt FROM post_telegram WHERE post_telegram.post_id =' + last_insert_id.id;
           connection.query(sql, function (err, rides) {
             if (err) {
-              console.log('err: ', err);
+              console.log('err1: ', err);
             }
             else if (rides[0].cnt == 0) {
              posttele (rides[0].cnt, last_insert_id.id, matchObj);
@@ -138,7 +138,6 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
             }
           })
         }).catch(function (error) {
-          setup();
           console.log(error);
         })
     }, 19000)
@@ -154,15 +153,13 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
       let sqlsss = "SELECT * FROM post_flags";
         connection.query(sqlsss, function (err, flagData) {
           if (err) {
-            console.log('err: ', err);
-          setup();
+            console.log('err2: ', err);
           }
           let ListflagData = flagData[0];
         let sqls = "SELECT post_id FROM post_telegram ORDER BY id DESC LIMIT 1";
         connection.query(sqls, function (err, rides) {
           if (err) {
-            console.log('err: ', err);
-          setup();
+            console.log('err3: ', err);
           }
           for (let i = 0; i < lastInsertId - rides[0].post_id; i++) {
             let nextId = rides[0].post_id + i + 1;
@@ -360,7 +357,7 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
 				console.log(getUrlPost,"cxc");
 				let finalIdListed = JSON.parse(ListflagData.array_data).user;
 				postImageWidth(getUrlPost[0],ListflagData.bestshopping_token,finalIdListed,nextId,finalAmazon);
-				 },Math.ceil(array.length/5)*3500);
+				 },Math.ceil(array.length/5)*4500);
 			 
 				} else{
 				  setTimeout(()=>{
