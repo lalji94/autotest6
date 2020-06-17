@@ -357,7 +357,7 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
 				console.log(getUrlPost,"cxc");
 				let finalIdListed = JSON.parse(ListflagData.array_data).user;
 				postImageWidth(getUrlPost[0],ListflagData.bestshopping_token,finalIdListed,nextId,finalAmazon);
-				 },Math.ceil(array.length/5)*4500);
+				 },Math.ceil(array.length/5)*3500);
 			 
 				} else{
 				  setTimeout(()=>{
@@ -650,14 +650,14 @@ function whatsapp_posts2(AmazonMsg,AmazonPhoto,Amznapi,Amznphoneid,Amznprodid){
 			linkRequest1 = {
 			  "to_number": arrayGroupNumber[i].id,
 			  "type": "text",
-			  "message": ggff
+			  "message": randomMonth + ggff
 			}
 		}else{
 			linkRequest1 = {
 				  "to_number": arrayGroupNumber[i].id,
 				  "type": "media",
 				  "message": AmazonPhoto,
-				  "text": randomMonth + ggff
+				  "text": ggff
 				}
 		}
         request({
