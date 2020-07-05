@@ -275,19 +275,19 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
                       if(tagnot != undefined){
                       example(tagnot.replace(/%25/g,'%'));
                        }else{
-                        // if(urlencode(quelink).match(/flipkart.com/g)){
-                        //   let finalLink =urlencode(quelink).split('&');
-                        //   for (let h = 0; h < finalLink.length; h++) {
-                        //     if(finalLink[h].match(/^affid/g)){
-                        //       finalLink[h] = 'demoyou'
-                        //     }else if(finalLink[h].match(/^affExtParam1/g)){
-                        //       finalLink[h] = 'demoyou'
-                        //     }
-                        //   }
-                        // let sstarget= finalLink.join('&').replace(/&demoyou/g, '');
-                        //   tagnot= ("https://linksredirect.com/?cid=76950&subid=kudrat_cl&source=linkkit&url=").concat(encodeURIComponent(sstarget));
-                        //    example(tagnot);
-                        // }
+                        if(urlencode(quelink).match(/flipkart.com/g)){
+                          let finalLink =urlencode(quelink).split('&');
+                          for (let h = 0; h < finalLink.length; h++) {
+                            if(finalLink[h].match(/^affid/g)){
+                              finalLink[h] = 'demoyou'
+                            }else if(finalLink[h].match(/^affExtParam1/g)){
+                              finalLink[h] = 'demoyou'
+                            }
+                          }
+                        let sstarget= finalLink.join('&').replace(/&demoyou/g, '');
+                          tagnot= ("https://linksredirect.com/?cid=76950&subid=kudrat_cl&source=linkkit&url=").concat(encodeURIComponent(sstarget));
+                           example(tagnot);
+                        }
                       }
                       async function example(dddd) {
                         let response =await bitly.shorten(dddd);
@@ -352,6 +352,7 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
 				  
 				  setTimeout(()=>{
                 let finalAmazon = final.join('\n');
+		if(finalAmazon.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)){
           let getUrlPost =  finalAmazon.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g);
         let finalIdListed = JSON.parse(ListflagData.array_data).user;
         if(finalAmazon.match(/amzn.to/g)){
@@ -369,6 +370,7 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
             whatsapp_posts2(finalAmazon,photoImg, finalIdList[1].apiKey,finalIdList[1].phoneId,finalIdList[1].productId);
         }
       })
+        }
         }
 				 },Math.ceil(array.length/5)*3500);
 			 
