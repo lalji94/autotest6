@@ -132,7 +132,7 @@ function postImageWidth(post_link,token,amzn_data,storeId,finalAmznData) {
               console.log('err1: ', err);
             }
             else if (rides[0].cnt == 0) {
-            // posttele (rides[0].cnt, last_insert_id.id, matchObj);
+            posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
