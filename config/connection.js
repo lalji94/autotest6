@@ -13,12 +13,12 @@ var mysql  = require('mysql');
 //     database:'vijay12345'
 // };
 
-var db_config = {
-  host     : 'remotemysql.com',
-  user     : 'oQP5gUwBbe',
-  password : 'Bxer38fbP2',
-  database:'oQP5gUwBbe'
-};
+// var db_config = {
+//   host     : 'remotemysql.com',
+//   user     : 'oQP5gUwBbe',
+//   password : 'Bxer38fbP2',
+//   database:'oQP5gUwBbe'
+// };
 //- Create the connection variable
 var connection = mysql.createConnection(db_config);
 
